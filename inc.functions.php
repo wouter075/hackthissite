@@ -12,11 +12,12 @@
 		curl_setopt($ch, CURLOPT_USERAGENT,'Mozilla/5.0');
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, "username=" . $username . "&password=" . $password);
-		
+
 		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
 		curl_setopt($ch, CURLOPT_REFERER, $referer);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // For 301 pages (moved)
-		
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //Will not check the ssl sertification.
+
 		curl_setopt($ch, CURLOPT_COOKIESESSION, true); // We need a cookie to stay loggedin.
 		curl_setopt($ch, CURLOPT_COOKIEJAR, $cookiefile);  // Cookiejar on creation, cookiefile on use.
 		
@@ -44,6 +45,7 @@
 		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
 		curl_setopt($ch, CURLOPT_REFERER, $url);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //Will not check the ssl sertification.
 		
 		curl_setopt($ch, CURLOPT_COOKIEFILE, $cookiefile); // Cookiejar on creation, cookiefile on use
 		
@@ -72,6 +74,7 @@
 		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
 		curl_setopt($ch, CURLOPT_REFERER, $url);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //Will not check the ssl sertification.
 		
 		curl_setopt($ch, CURLOPT_COOKIEFILE, $cookiefile); // Cookiejar on creation, cookiefile on use
 		
@@ -106,11 +109,11 @@
 		curl_setopt($ch, CURLOPT_USERAGENT,'Mozilla/5.0');
 		curl_setopt($ch, CURLOPT_POST, true);
 		curl_setopt($ch, CURLOPT_POSTFIELDS, "solution=" . $solution . "&submitbutton=submit");
-	
-	
+
 		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
 		curl_setopt($ch, CURLOPT_REFERER, $url);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); //Will not check the ssl sertification.
 		
 		curl_setopt($ch, CURLOPT_COOKIEFILE, $cookiefile);
 		
